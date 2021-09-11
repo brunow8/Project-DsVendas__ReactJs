@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import com.devsuperior.dsvendas.entities.Sale;
 
 public class SaleDTO {
-	
+
 	private Long id;
 	private Integer visited;
 	private Integer deals;
@@ -25,13 +25,14 @@ public class SaleDTO {
 		this.date = date;
 		this.seller = seller;
 	}
+	
 	public SaleDTO(Sale entity) {
-		this.id = entity.getId();
-		this.visited = entity.getVisited();
-		this.deals = entity.getDeals();
-		this.amount = entity.getAmount();
-		this.date = entity.getDate();
-		this.seller = new SellerDTO(entity.getSeller());
+		id = entity.getId();
+		visited = entity.getVisited();
+		deals = entity.getDeals();
+		amount = entity.getAmount();
+		date = entity.getDate();
+		seller = new SellerDTO(entity.getSeller());
 	}
 
 	public Long getId() {
@@ -81,5 +82,4 @@ public class SaleDTO {
 	public void setSeller(SellerDTO seller) {
 		this.seller = seller;
 	}
-	
 }
